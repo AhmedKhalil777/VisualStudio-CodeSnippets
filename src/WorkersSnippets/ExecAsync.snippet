@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Workers - ExecuteAsync</Title>
+            <Author>AhmedKhalil</Author>
+            <Description>Add a recurring implementation of a background service </Description>
+            <Shortcut>wexas</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[
+                          protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+                            {
+                                while (!stoppingToken.IsCancellationRequested)
+                                {
+                                    // The recurring execution body here
+                                    await Task.Delay(1000, stoppingToken);
+                                }
+                            }
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
